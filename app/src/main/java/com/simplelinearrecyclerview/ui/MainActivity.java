@@ -36,12 +36,22 @@ private List<String>listtitle;
 
     private void initializeViews()
     {
-        recycklerview_java=findViewById(R.id.recycklerview_java);
+        try {
+
+            recycklerview_java=findViewById(R.id.recycklerview_java);
+
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
 
     }
 
     private void setListForRecyclerView()
     {
+        try {
+
         listtitle=new ArrayList<>();
 
         listimage=new ArrayList<>();
@@ -69,16 +79,29 @@ private List<String>listtitle;
         listtitle.add("Terms And Conditions");
 
         listtitle.add("Terms And Conditions");
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
+
 
     private void setAdapterForRecyclerView()
     {
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        recycklerview_java.setHasFixedSize(true);
-        recycklerview_java.setLayoutManager(linearLayoutManager);
-        RecyclerViewAdapter adapter=new RecyclerViewAdapter(this,listimage,listtitle);
-        recycklerview_java.setAdapter(adapter);
+        try {
 
+            LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
+            linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+            recycklerview_java.setHasFixedSize(true);
+            recycklerview_java.setLayoutManager(linearLayoutManager);
+            RecyclerViewAdapter adapter=new RecyclerViewAdapter(this,listimage,listtitle);
+            recycklerview_java.setAdapter(adapter);
+
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 }

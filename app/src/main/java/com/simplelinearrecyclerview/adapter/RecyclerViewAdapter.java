@@ -41,17 +41,33 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        holder.tv_title.setText(listtitle.get(position));
-        holder.iv_icon.setImageResource(listimage.get(position));
+        try {
+
+            holder.tv_title.setText(listtitle.get(position));
+            holder.iv_icon.setImageResource(listimage.get(position));
+
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (holder.getAdapterPosition()==2)
+                try {
+
+                    if (holder.getAdapterPosition()==2)
+                    {
+                        Toast.makeText(view.getContext(),"shubham",Toast.LENGTH_LONG).show();
+                    }
+
+                }catch (Exception e)
                 {
-                    Toast.makeText(view.getContext(),"shubham",Toast.LENGTH_LONG).show();
+                    e.printStackTrace();
                 }
+
             }
         });
 
